@@ -193,7 +193,7 @@
 
     <!-- Music Player Widget -->
     <div id="music-widget" class="fixed bottom-6 right-6 z-[60] w-80 bg-cyber-black border border-cyber-green rounded-md shadow-[0_0_20px_rgba(0,255,65,0.2)] overflow-hidden transition-all duration-300 transform translate-y-0">
-        <div id="music-header" class="bg-gray-900 p-3 flex justify-between items-center cursor-pointer hover:bg-gray-800 transition-colors border-b border-cyber-dim group">
+        <div id="music-header" class="bg-gray-900 p-3 flex justify-between items-center cursor-pointer hover:bg-gray-800 transition-colors border-b border-cyber-dim border-b-0 group">
             <div class="flex items-center space-x-3">
                 <div class="relative w-4 h-4">
                     <div class="absolute inset-0 bg-cyber-green rounded-full opacity-20 animate-ping"></div>
@@ -205,10 +205,10 @@
                 </div>
             </div>
             <button class="text-cyber-green hover:text-white transition-colors">
-                <i id="music-toggle-icon" class="fas fa-minus text-xs"></i>
+                <i id="music-toggle-icon" class="fas fa-chevron-up text-xs"></i>
             </button>
         </div>
-        <div id="music-content" class="bg-black p-0 transition-all duration-300 ease-in-out">
+        <div id="music-content" class="bg-black p-0 transition-all duration-300 ease-in-out" style="display: none;">
              <div class="p-4 bg-black border-b border-cyber-dim/30 flex flex-col items-center justify-center space-y-4">
                 <div class="flex items-end justify-center space-x-1 h-12 w-full bg-cyber-dark/50 rounded border border-cyber-dim/20 p-2 relative overflow-hidden">
                     <div class="absolute inset-0 bg-cyber-green/5 scanlines"></div>
@@ -871,7 +871,7 @@
                 }, { once: true });
             });
             
-            let isExpanded = true;
+            let isExpanded = false;
             header.addEventListener('click', () => {
                 isExpanded = !isExpanded;
                 content.style.display = isExpanded ? 'block' : 'none';
